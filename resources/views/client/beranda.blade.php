@@ -137,7 +137,7 @@
                         <img src="{{ Storage::url($b->gambar) }}" class="w-full h-48 object-cover" alt="">
                         <div class="p-4">
                             <h3 class="font-semibold text-lg mb-2">{{ $b->judul }}</h3>
-                            <p class="text-gray-600">{{ Str::limit($b->isi, 80) }}</p>
+                            <p class="text-gray-600">{{ Str::limit(strip_tags($b->isi)) }}</p>
                         </div>
                     </div>
                 @endforeach

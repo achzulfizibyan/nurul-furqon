@@ -5,7 +5,9 @@
 @section('content')
     <div class="container mx-auto px-4 py-8 mt-8">
         <h1 class="text-3xl font-bold mb-4">{{ $galeri->judul }}</h1>
-        <p class="text-gray-500 text-sm mb-6">Dibuat: {{ $galeri->created_at->format('d M Y H:i') }}</p>
+        <span class="text-sm text-gray-400 block mb-4">
+            Dibuat: {{ $galeri->created_at->diffForHumans() }}
+        </span>
 
         <!-- Thumbnail -->
         <img src="{{ asset('storage/' . $galeri->gambar) }}" alt="{{ $galeri->judul }}"

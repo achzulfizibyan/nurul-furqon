@@ -29,7 +29,9 @@
                             @if ($galeri->deskripsi)
                                 <p class="text-gray-600 text-sm">{{ Str::limit($galeri->deskripsi, 100) }}</p>
                             @endif
-                            <p class="text-xs text-gray-400 mt-2">Dibuat: {{ $galeri->created_at->format('d M Y') }}</p>
+                            <span class="text-sm text-gray-400 block mb-4">
+                                Dibuat: {{ $galeri->created_at->diffForHumans() }}
+                            </span>
                         </div>
                     </div>
                 @endforeach
